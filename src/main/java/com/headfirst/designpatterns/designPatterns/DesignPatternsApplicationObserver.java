@@ -1,15 +1,11 @@
 package com.headfirst.designpatterns.designPatterns;
 
 import org.springframework.boot.SpringApplication;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.headfirst.designpatterns.designPatterns.observer.CurrentConditionsDipslay;
 import com.headfirst.designpatterns.designPatterns.observer.WeatherData;
-import com.headfirst.designpatterns.designPatterns.strategy.Duck;
-import com.headfirst.designpatterns.designPatterns.strategy.FlyRocketPowered;
-import com.headfirst.designpatterns.designPatterns.strategy.MallardDuck;
-import com.headfirst.designpatterns.designPatterns.strategy.ModelDuck;
-import com.headfirst.designpatterns.designPatterns.strategy.MuteQuack;
 
 @SpringBootApplication
 public class DesignPatternsApplicationObserver {
