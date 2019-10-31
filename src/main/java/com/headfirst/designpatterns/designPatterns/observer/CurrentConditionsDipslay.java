@@ -4,6 +4,7 @@ public class CurrentConditionsDipslay implements Observer, DisplayElement {
 
 	private float temperature;
 	private float humidity;
+	@SuppressWarnings("unused")
 	private Subject weatherData;
 
 	public CurrentConditionsDipslay(Subject weatherData) {
@@ -14,7 +15,7 @@ public class CurrentConditionsDipslay implements Observer, DisplayElement {
 
 	@Override
 	public void update(float temp, float humidity, float pressure) {
-		this.temperature = temp;
+		temperature = temp;
 		this.humidity = humidity;
 		display();
 

@@ -1,7 +1,9 @@
 package com.headfirst.designpatterns.designPatterns.observerJava;
 
 import java.util.Observable;
+
 import java.util.Observer;
+
 
 public class CurrentConditionsDipslay implements Observer, DisplayElement {
 
