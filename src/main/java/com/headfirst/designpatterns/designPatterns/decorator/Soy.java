@@ -1,4 +1,4 @@
-package com.headfirst.designpatterns.designPatterns;
+package com.headfirst.designpatterns.designPatterns.decorator;
 
 import com.headfirst.designpatterns.designPatterns.decorator.Beverage;
 import com.headfirst.designpatterns.designPatterns.decorator.CondimentDecorator;

@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.headfirst.designpatterns.designPatterns.singleton.ChocolateBoiler;
 import com.headfirst.designpatterns.designPatterns.singleton.ClassicSingleton;
 import com.headfirst.designpatterns.designPatterns.singleton.DoubleCheckedLockSingleton;
+import com.headfirst.designpatterns.designPatterns.singleton.EagerlyLoadedSingleton;
+import com.headfirst.designpatterns.designPatterns.singleton.ThreadSafeSingleton;
 
 @SpringBootApplication
 public class DesignPatternsApplicationSingleton {

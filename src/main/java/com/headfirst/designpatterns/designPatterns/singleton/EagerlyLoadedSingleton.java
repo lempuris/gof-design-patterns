@@ -1,4 +1,4 @@
-package com.headfirst.designpatterns.designPatterns;
+package com.headfirst.designpatterns.designPatterns.singleton;
 
 public class EagerlyLoadedSingleton {
 	

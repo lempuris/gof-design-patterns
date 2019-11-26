@@ -8,6 +8,8 @@ import com.headfirst.designpatterns.designPatterns.decorator.DarkRoast;
 import com.headfirst.designpatterns.designPatterns.decorator.Espresso;
 import com.headfirst.designpatterns.designPatterns.decorator.HouseBlend;
 import com.headfirst.designpatterns.designPatterns.decorator.Mocha;
+import com.headfirst.designpatterns.designPatterns.decorator.Soy;
+import com.headfirst.designpatterns.designPatterns.decorator.Whip;
 
 @SpringBootApplication
 public class DesignPatternsApplicationDecorator {
