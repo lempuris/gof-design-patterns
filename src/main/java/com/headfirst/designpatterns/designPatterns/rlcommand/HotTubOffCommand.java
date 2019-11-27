@@ -15,4 +15,10 @@ public class HotTubOffCommand implements Command {
 		ht.off();
 	}
 
+	@Override
+	public void undo() {
+
+		ht.on();
+	}
+
 }

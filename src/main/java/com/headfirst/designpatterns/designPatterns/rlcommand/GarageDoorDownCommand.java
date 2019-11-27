@@ -15,4 +15,10 @@ public class GarageDoorDownCommand implements Command {
 		gd.down();
 	}
 
+	@Override
+	public void undo() {
+
+		gd.up();
+	}
+
 }
