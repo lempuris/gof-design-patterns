@@ -6,12 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.headfirst.designpatterns.designPatterns.rlcommand.CeilingFan;
 import com.headfirst.designpatterns.designPatterns.rlcommand.CeilingFanOffCommand;
 import com.headfirst.designpatterns.designPatterns.rlcommand.CeilingFanOnCommand;
+import com.headfirst.designpatterns.designPatterns.rlcommand.Command;
 import com.headfirst.designpatterns.designPatterns.rlcommand.GarageDoor;
 import com.headfirst.designpatterns.designPatterns.rlcommand.GarageDoorDownCommand;
 import com.headfirst.designpatterns.designPatterns.rlcommand.GarageDoorUpCommand;
 import com.headfirst.designpatterns.designPatterns.rlcommand.Light;
 import com.headfirst.designpatterns.designPatterns.rlcommand.LightOffCommand;
 import com.headfirst.designpatterns.designPatterns.rlcommand.LightOnCommand;
+import com.headfirst.designpatterns.designPatterns.rlcommand.MacroCommands;
 import com.headfirst.designpatterns.designPatterns.rlcommand.RemoteControl;
 import com.headfirst.designpatterns.designPatterns.rlcommand.Stereo;
 import com.headfirst.designpatterns.designPatterns.rlcommand.StereoOffCommand;
@@ -45,25 +47,39 @@ public class DesignPatternsRemoteLoaderCommand {
 		StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
 		StereoOffCommand stereoOff = new StereoOffCommand(stereo);
 
-		remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
-		remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
-		remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
-		remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
-		remoteControl.setCommand(4, garageDoorUp, garageDoorDown);
+		Command[] partyOn = { livingRoomLightOn, kitchenLightOn, ceilingFanOn, garageDoorUp, stereoOnWithCD };
+		Command[] partyOff = { livingRoomLightOff, kitchenLightOff, ceilingFanOff, garageDoorDown, stereoOff };
+
+		MacroCommands partyOnMacro = new MacroCommands(partyOn);
+		MacroCommands partyOffMacro = new MacroCommands(partyOff);
+
+		remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
 
 		System.out.println(remoteControl);
+		System.out.println("--- Pushing Macro On---");
+		remoteControl.onButtonWasPushed(0);
+		System.out.println("--- Pushing Macro Off---");
+		remoteControl.offButtonWasPushed(0);
 
-		remoteControl.onButtonWasPushed(0);
-		remoteControl.offButtonWasPushed(0);
-		System.out.println(remoteControl);
-		
-		remoteControl.undoButtonWasPushed();
-		
-		remoteControl.offButtonWasPushed(0);
-		remoteControl.onButtonWasPushed(0);
-		System.out.println(remoteControl);
-		
-		remoteControl.undoButtonWasPushed();
+//		remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
+//		remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
+//		remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
+//		remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
+//		remoteControl.setCommand(4, garageDoorUp, garageDoorDown);
+//
+//		System.out.println(remoteControl);
+//
+//		remoteControl.onButtonWasPushed(0);
+//		remoteControl.offButtonWasPushed(0);
+//		System.out.println(remoteControl);
+//
+//		remoteControl.undoButtonWasPushed();
+//
+//		remoteControl.offButtonWasPushed(0);
+//		remoteControl.onButtonWasPushed(0);
+//		System.out.println(remoteControl);
+//
+//		remoteControl.undoButtonWasPushed();
 
 //		remoteControl.onButtonWasPushed(1);
 //		remoteControl.offButtonWasPushed(1);
